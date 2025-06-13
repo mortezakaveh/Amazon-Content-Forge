@@ -1,0 +1,76 @@
+{
+  "modules": [
+    {
+      "module": "Webhook",
+      "name": "Webhook",
+      "fields": {
+        "name": "Mode Routing"
+      }
+    },
+    {
+      "module": "Generate Content",
+      "fields": {
+        "Prompt": "{{mode}} === 'seller' ? \"You're writing for a brand store. Generate: 1) SEO title 2) 150-word product intro 3) Key features (bullet) 4) Social teaser. Product ASIN: {{asin}}\" : \"Generate a marketing blog title and a 100-word unboxing-style description for the following Amazon product. Include a short social caption, too. Use this ASIN for details: {{asin}}\""
+      }
+    },
+    {
+      "module": "GenerateBanner",
+      "fields": {
+        "Dataset name": "text focused",
+        "Width": 1200,
+        "Height": 900
+      }
+    },
+    {
+      "module": "Heygen",
+      "fields": {
+        "Avatar ID": "default"
+      }
+    },
+    {
+      "module": "Instagram for Business",
+      "fields": {
+        "File URL": "{{4.Image URL}}",
+        "Caption": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Facebook Pages",
+      "fields": {
+        "Message Text": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Twitter",
+      "fields": {
+        "Text": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Telegram Bot",
+      "fields": {
+        "Photo URL": "{{4.Image URL}}",
+        "Caption": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Discord",
+      "fields": {
+        "Message": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Slack",
+      "fields": {
+        "Message": "{{3.Text}}"
+      }
+    },
+    {
+      "module": "Email Marketing",
+      "fields": {
+        "Subject": "New Product!",
+        "Body": "{{3.Text}}"
+      }
+    }
+  ]
+}

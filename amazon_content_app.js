@@ -6,6 +6,7 @@ exports.sendToMake = functions.https.onCall(async (data, context) => {
   const { asin, mode } = data;
 
   try {
+    // TODO: Replace "your-webhook-id" with your actual Make.com webhook ID
     const response = await axios.post("https://hook.make.com/your-webhook-id", {
       asin,
       mode // "affiliate" or "seller"
@@ -24,7 +25,7 @@ const promptAffiliate = (asin) => `Generate a marketing blog title and a 100-wor
 const promptSeller = (asin) => `You're writing for a brand store. Generate: 1) SEO title 2) 150-word product intro 3) Key features (bullet) 4) Social teaser. Product ASIN: ${asin}`;
 
 // Frontend Code (HTML + JS)
-/*
+
 <form id="form">
   <input type="text" name="asin" placeholder="Amazon ASIN" required>
   <select name="mode">
@@ -43,7 +44,7 @@ const promptSeller = (asin) => `You're writing for a brand store. Generate: 1) S
 
     const res = await fetch("/__/functions/sendToMake", {
       method: "POST",
-      body: JSON.stringify({ data: { asin, mode } }),
+      body: JSON.stringify({ asin, mode }),
       headers: { "Content-Type": "application/json" }
     });
 
@@ -51,4 +52,3 @@ const promptSeller = (asin) => `You're writing for a brand store. Generate: 1) S
     alert("Sent to Make: " + JSON.stringify(result));
   };
 </script>
-*/
